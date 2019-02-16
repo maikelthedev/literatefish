@@ -1,6 +1,6 @@
 # Fish function for literate programming
 
-This is a **function** for fish shell that takes ***markdown*** text like this and converts it into a runnable fish script (ands runs it) from the terminal. This follows conventions of literate programming. A programmign paradigm in which the code is embedded within the documentation with the reasoning for it. If you want to know more about literate programming [check this out](https://en.wikipedia.org/wiki/Literate_programming)
+This is a **function** for fish shell that takes ***markdown*** text like this and converts it into a runnable fish script (ands runs it) from the terminal. This follows conventions of literate programming. A programming paradigm in which the code is embedded within the documentation with the reasoning for it. If you want to know more about literate programming [check this out](https://en.wikipedia.org/wiki/Literate_programming)
 
 Run your markdown fish code with:
 
@@ -70,4 +70,11 @@ function litrun
   set runner $argv[2]
   for line in $processed; echo $line; end | $runner
 end
+```
+
+Now: this whole file can be parsed using the same function it describes. If you already have the function installed you could update it to a newer version with:
+
+```bash
+set conf (if test $XDG_CONFIG_HOME; echo $XDG_CONFIG_HOME;else;echo "~/.config";end)
+delitcode README.md fish >> $conf/fish/functions/litrun.fish
 ```
