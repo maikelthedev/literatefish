@@ -1,4 +1,4 @@
-# Fish tangler for literate programming
+# Fish function for literate programming
 
 This is a **function** for fish shell that takes ***markdown*** text like this and converts it into a runnable fish script (ands runs it) from the terminal. This follows conventions of literate programming. A programmign paradigm in which the code is embedded within the documentation with the reasoning for it. If you want to know more about literate programming [check this out](https://en.wikipedia.org/wiki/Literate_programming)
 
